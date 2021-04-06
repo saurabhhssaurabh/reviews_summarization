@@ -51,7 +51,8 @@ _URL = "https://rajpurkar.github.io/SQuAD-explorer/dataset/"
 _URLS = {
     # "train": _URL + "train-v1.1.json",
     # "dev": _URL + "dev-v1.1.json",
-    "train": "/home/dev01/saurabh/token_classifier_r/data/bert/version_1/train-v1.1.json"
+    "train": "/home/dev01/saurabh/token_classifier_r/data/bert/version_3/train_squad.json",
+    "dev": "/home/dev01/saurabh/token_classifier_r/data/bert/version_3/dev_squad.json"
 }
 
 
@@ -107,7 +108,7 @@ class Squad(datasets.GeneratorBasedBuilder):
 
         return [
             datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={"filepath": downloaded_files["train"]}),
-            # datasets.SplitGenerator(name=datasets.Split.VALIDATION, gen_kwargs={"filepath": downloaded_files["dev"]}),
+            datasets.SplitGenerator(name=datasets.Split.VALIDATION, gen_kwargs={"filepath": downloaded_files["dev"]}),
         ]
 
     def _generate_examples(self, filepath):
