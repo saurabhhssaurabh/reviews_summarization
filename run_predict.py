@@ -1,19 +1,19 @@
-from transformers import BertTokenizer, BertForQuestionAnswering, pipeline
+from transformers import DistilBertTokenizer, DistilBertForQuestionAnswering, pipeline #BertTokenizer, BertForQuestionAnswering, 
 import torch, json, logging
 logging.getLogger().setLevel(logging.INFO)
 
 class OpinionExtraction():
-    model_dir = '/home/dev01/saurabh/token_classifier_r/output/bert/version_3/'
+    model_dir = '/home/dev01/saurabh/token_classifier_r/output/distilbert/version_2/'
     input_file = "/home/dev01/saurabh/token_classifier_r/predict_data/input/b0013frnkg.json"
-    output_file = "/home/dev01/saurabh/token_classifier_r/predict_data/output/version_3/b0013frnkg.json"
+    output_file = "/home/dev01/saurabh/token_classifier_r/predict_data/output/distilbert/version_2/b0013frnkg.json"
     question_list = ["how is display?", "how is memory?", "how is quality of speaker?", 
                     "how is sound?", "how is processor?", "how is wireless connection?", 
                     "how is battery?", "how is brand?", "how is operating system?",
                     "how is camera?"]
 
     def __init__(self):
-        self.tokenizer = BertTokenizer.from_pretrained(self.model_dir, return_token_type_ids = True)
-        self.model = BertForQuestionAnswering.from_pretrained(self.model_dir)
+        self.tokenizer = DistilBertTokenizer.from_pretrained(self.model_dir, return_token_type_ids = True)
+        self.model = DistilBertForQuestionAnswering.from_pretrained(self.model_dir)
         self.nlp = pipeline('question-answering', model = self.model, tokenizer = self.tokenizer)
 
     def predict(self):
