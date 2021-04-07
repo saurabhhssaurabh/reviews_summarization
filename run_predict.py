@@ -3,9 +3,9 @@ import torch, json, logging
 logging.getLogger().setLevel(logging.INFO)
 
 class OpinionExtraction():
-    model_dir = '/home/dev01/saurabh/token_classifier_r/output/bert/version_2/'
+    model_dir = '/home/dev01/saurabh/token_classifier_r/output/bert/version_3/'
     input_file = "/home/dev01/saurabh/token_classifier_r/predict_data/input/b0013frnkg.json"
-    output_file = "/home/dev01/saurabh/token_classifier_r/predict_data/output/b0013frnkg.json"
+    output_file = "/home/dev01/saurabh/token_classifier_r/predict_data/output/version_3/b0013frnkg.json"
     question_list = ["how is display?", "how is memory?", "how is quality of speaker?", 
                     "how is sound?", "how is processor?", "how is wireless connection?", 
                     "how is battery?", "how is brand?", "how is operating system?",
@@ -47,3 +47,7 @@ class OpinionExtraction():
                     out_f.write(json.dumps(obj)+"\n")
 
                     logging.info("object number => {}".format(counter))
+
+if __name__ == "__main__":
+    obj = OpinionExtraction()
+    obj.predict()
