@@ -5,3 +5,9 @@ preprocess: No
 version_3:
 fine tuned: squad v1.1 and rrc
 preprocess: No
+
+distilbert_version_2:
+fine tuned: squad v1.1
+
+distilbert_version_3:
+fine tuned: squad v1.1 + rrc
