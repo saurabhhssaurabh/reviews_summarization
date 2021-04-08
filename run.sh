@@ -61,18 +61,18 @@
 #   --save_total_limit 1
 
 #Train on version_3, distilbert + squad + rrc
-python run_qa.py \
-  --model_name_or_path /home/dev01/saurabh/token_classifier_r/output/distilbert/version_2 \
-  --do_train \
-  --do_eval \
-  --per_device_train_batch_size 12 \
-  --learning_rate 3e-5 \
-  --num_train_epochs 8 \
-  --max_seq_length 1000 \
-  --doc_stride 128 \
-  --output_dir /home/dev01/saurabh/token_classifier_r/output/distilbert/version_3 \
-  --cache_dir /home/dev01/saurabh/token_classifier_r/cache/distilbert/version_3 \
-  --logging_dir /home/dev01/saurabh/token_classifier_r/logs/distilbert/version_3 \
-  --save_total_limit 1 \
-  --train_file /home/dev01/saurabh/token_classifier_r/data/bert/version_3/train_squad.json \
-  --validation_file /home/dev01/saurabh/token_classifier_r/data/bert/version_3/dev_squad.json
+# python run_qa.py \
+#   --model_name_or_path /home/dev01/saurabh/token_classifier_r/output/distilbert/version_2 \
+#   --do_train \
+#   --do_eval \
+#   --per_device_train_batch_size 12 \
+#   --learning_rate 3e-5 \
+#   --num_train_epochs 8 \
+#   --max_seq_length 1000 \
+#   --doc_stride 128 \
+#   --output_dir /home/dev01/saurabh/token_classifier_r/output/distilbert/version_3 \
+#   --cache_dir /home/dev01/saurabh/token_classifier_r/cache/distilbert/version_3 \
+#   --logging_dir /home/dev01/saurabh/token_classifier_r/logs/distilbert/version_3 \
+#   --save_total_limit 1 \
+#   --train_file /home/dev01/saurabh/token_classifier_r/data/bert/version_3/train_squad.json \
+#   --validation_file /home/dev01/saurabh/token_classifier_r/data/bert/version_3/dev_squad.json
