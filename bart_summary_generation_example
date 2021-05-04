@@ -1,5 +1,5 @@
 from transformers import pipeline
-summarizer = pipeline("summarization", model="philschmid/distilbart-cnn-12-6-samsum")
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 conversation = '''Haven 't had it but a few weeks , but I am learning how to download from the library etc. love how light it is and that it will tuck away in a purse for easy reading anywhere . No operating problems so far . Would recommend it for home or away Gave this to my granddaughter who loves it . She uses it all the time and loves the touch feature and ease of downloading .'''
 x = summarizer(conversation)
 print(x)
